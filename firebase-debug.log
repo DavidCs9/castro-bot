@@ -1,13 +1,13 @@
-[debug] [2023-02-18T19:41:14.828Z] ----------------------------------------------------------------------
-[debug] [2023-02-18T19:41:14.829Z] Command:       /snap/node/7065/bin/node /usr/local/bin/firebase init hosting
-[debug] [2023-02-18T19:41:14.830Z] CLI Version:   11.23.1
-[debug] [2023-02-18T19:41:14.830Z] Platform:      linux
-[debug] [2023-02-18T19:41:14.830Z] Node Version:  v18.13.0
-[debug] [2023-02-18T19:41:14.831Z] Time:          Sat Feb 18 2023 13:41:14 GMT-0600 (Central Standard Time)
-[debug] [2023-02-18T19:41:14.831Z] ----------------------------------------------------------------------
+[debug] [2023-02-18T21:41:14.029Z] ----------------------------------------------------------------------
+[debug] [2023-02-18T21:41:14.030Z] Command:       /snap/node/7065/bin/node /usr/local/bin/firebase init
+[debug] [2023-02-18T21:41:14.031Z] CLI Version:   11.23.1
+[debug] [2023-02-18T21:41:14.031Z] Platform:      linux
+[debug] [2023-02-18T21:41:14.031Z] Node Version:  v18.13.0
+[debug] [2023-02-18T21:41:14.032Z] Time:          Sat Feb 18 2023 15:41:14 GMT-0600 (Central Standard Time)
+[debug] [2023-02-18T21:41:14.032Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-02-18T19:41:14.836Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-02-18T19:41:14.837Z] > authorizing via signed-in user (davidcastrosi@hotmail.com)
+[debug] [2023-02-18T21:41:14.037Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-18T21:41:14.038Z] > authorizing via signed-in user (davidcastrosi@hotmail.com)
 [info] 
      ######## #### ########  ######## ########     ###     ######  ########
      ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
@@ -26,13 +26,13 @@ You're about to initialize a Firebase project in this directory:
 [info] You can create multiple project aliases by running firebase use --add, 
 [info] but for now we'll just set up a default project.
 [info] 
-[debug] [2023-02-18T19:41:26.646Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
-[debug] [2023-02-18T19:41:27.569Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
-[debug] [2023-02-18T19:41:27.569Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
-[info] i  Using project castro-bot (castro-bot) 
+[debug] [2023-02-18T21:41:18.879Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2023-02-18T21:41:20.069Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2023-02-18T21:41:20.069Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project castrobot-a6095 (castrobot) 
 [info] 
 === Hosting Setup
-[debug] [2023-02-18T19:41:29.838Z] SyntaxError: Unexpected end of JSON input
+[debug] [2023-02-18T21:41:22.833Z] SyntaxError: Unexpected end of JSON input
     at JSON.parse (<anonymous>)
     at findDependency (/usr/local/lib/node_modules/firebase-tools/lib/frameworks/index.js:120:23)
     at discover (/usr/local/lib/node_modules/firebase-tools/lib/frameworks/nuxt2/index.js:16:51)

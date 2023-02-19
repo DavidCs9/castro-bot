@@ -1,5 +1,4 @@
-import { Avatar } from '@/components/Avatar'
-import { SendIcon, ChatGPTLogo } from '@/components/Icons'
+import { SendIcon } from '@/components/Icons'
 import { TypingEffect } from '@/components/TypingEffect'
 import Head from 'next/head'
 import { useMessageStore } from '@/store/messages'
@@ -23,38 +22,31 @@ function Layout ({ children }) {
   )
 }
 
-// function Aside () {
-//   return (
-//     <aside className=' bg-gptdarkgrey fixed flex w-64 h-screen flex-col'>
-//       <nav className='flex flex-col flex-1 h-full p-2 space-y-1'>
-//         <button className='flex py-3 px-3 items-center gap-3 rounded-md hover:bg-gray-500/10
-//         transition-colors duration-200 text-white cursor-pointer text-sm mb-2 flex-shrink-0 border
-//          border-white/20'
-//         >
-//           <PlusIcon />
-//           New chat
-//         </button>
-//       </nav>
-//     </aside>
-//   )
-// }
-
 function UserAvatar () {
   return (
     <img
+      className=' rounded-md bg-black'
       alt='foto de david'
       src='https://www.davidcastro.tech/static/images/david.jpg'
     />
   )
 }
 
+function IaAvatar () {
+  return (
+    <i className='fa-solid fa-robot' />
+  )
+}
+
 function Message ({ ia, message }) {
-  const avatar = ia ? <ChatGPTLogo /> : <UserAvatar />
+  const avatar = ia ? <IaAvatar /> : <UserAvatar />
   const textElement = ia ? <TypingEffect text={message} /> : message
   return (
     <div>
       <article className='flex gap-4 p-6 m-auto max-w-3xl text-gray-100 '>
-        <Avatar>{avatar}</Avatar>
+        <figure className={`${ia ? ' bg-purple-700' : ' bg-black'} w-8 h-8 flex items-center justify-center rounded-md`}>
+          {avatar}
+        </figure>
         <div className=' flex-1'>
           <p className={`${ia ? ' bg-purple-700' : ' bg-green-700'} rounded-md p-4`}>{textElement}</p>
         </div>
@@ -110,6 +102,7 @@ function ChatForm () {
   return (
     <div className='w-full fixed top-0 bg-black'>
       <section className=' m-4 justify-center bg-neutral-900 border-neutral-600 border-2 rounded-lg p-3 pb-7'>
+        {/* <img src='./public/CASTROBOT.svg' width='200' height='200' alt='logo' /> */}
         <h1 className=' text-center text-3xl pb-3'>CastroBot</h1>
         <form
           onSubmit={handleSubmit}
@@ -145,6 +138,7 @@ export default function Home () {
       <Layout>
         <Chat />
       </Layout>
+      <script src='https://kit.fontawesome.com/a654d59b05.js' crossorigin='anonymous' async />
     </>
   )
 }
