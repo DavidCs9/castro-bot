@@ -3,6 +3,8 @@ import { create } from 'zustand'
 export const useMessageStore = create((set, get) => ({
   messages: [],
   error: null,
+  deleteMessages: () => set({ messages: [] }),
+
   sendPrompt: async ({ prompt, userPrompt }) => {
     const messageIAid = get().messages.length + 1
     const allPrompt = prompt

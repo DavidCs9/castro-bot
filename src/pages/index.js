@@ -3,6 +3,7 @@ import { TypingEffect } from '@/components/TypingEffect'
 import Head from 'next/head'
 import { useMessageStore } from '@/store/messages'
 import { useRef } from 'react'
+import { DeleteButton } from '@/components/DeleteButton'
 
 function Layout ({ children }) {
   return (
@@ -65,6 +66,7 @@ function Chat () {
         {messages.map((entry) => (
           <Message key={entry.id} {...entry} />
         ))}
+        <DeleteButton />
       </main>
     </div>
   )
