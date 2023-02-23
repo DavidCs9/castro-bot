@@ -3,9 +3,9 @@ import { create } from 'zustand'
 export const useMessageStore = create((set, get) => ({
   messages: [],
   error: null,
-  sendPrompt: async ({ prompt }) => {
+  sendPrompt: async ({ prompt, userPrompt }) => {
     const messageIAid = get().messages.length + 1
-    const userPrompt = prompt
+    const allPrompt = prompt
 
     // actualizar el estados de los mensajes con el mensaje del usuario
     set((state) => ({
@@ -14,7 +14,7 @@ export const useMessageStore = create((set, get) => ({
         {
           id: state.messages.length,
           ia: false,
-          message: prompt
+          message: userPrompt
         },
         {
           id: state.messages.length + 1,
@@ -32,12 +32,11 @@ export const useMessageStore = create((set, get) => ({
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          prompt: userPrompt
+          prompt: allPrompt
 
         })
       })
       const json = await response.json()
-      console.log(json.response)
 
       set(state => ({
         messages: state.messages.map(entry => {

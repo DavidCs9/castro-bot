@@ -30,8 +30,6 @@ export function TypingEffect ({ text }) {
     return () => clearInterval(intervalId)
   }, [text, currentIndex])
 
-  console.log(displayText)
-
   return (
     <span className={`${showCursor ? 'after:content-["┃"] after:ml-1 after:animate-pulse' : ''}`}>{displayText}</span>
   )

@@ -58,11 +58,6 @@ function Message ({ ia, message }) {
 function Chat () {
   const messages = useMessageStore(state => state.messages)
 
-  // const handleChange = () => {
-  //   const chatContainer = document.getElementById('chat')
-  //   window.scroll(chatContainer.scrollTop)
-  // }
-
   return (
     <div className='flex flex-col h-full flex-1'>
       <ChatForm />
@@ -78,11 +73,19 @@ function Chat () {
 function ChatForm () {
   const sendPrompt = useMessageStore(state => state.sendPrompt)
   const textAreaRef = useRef()
+  const messages = useMessageStore(state => state.messages)
 
   const handleSubmit = (event) => {
+    let prompts = ''
+    messages.map((entry) => (
+      prompts += entry.message
+    ))
+
+    prompts += textAreaRef.current.value
     event.preventDefault()
-    const { value } = textAreaRef.current
-    sendPrompt({ prompt: value })
+    console.log(prompts)
+    console.log(textAreaRef.current.value)
+    sendPrompt({ prompt: prompts, userPrompt: textAreaRef.current.value })
     textAreaRef.current.value = ''
   }
 
