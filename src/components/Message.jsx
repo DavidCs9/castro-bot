@@ -1,8 +1,9 @@
 import { IaAvatar } from './IsAvatar'
 import { UserAvatar } from './UserAvatar'
 import { TypingEffect } from './TypingEffect'
+import { Loading } from './Loading'
 
-export function Message ({ ia, message }) {
+export function Message ({ ia, message, loading }) {
   const avatar = ia ? <IaAvatar /> : <UserAvatar />
   const lines = message.split('\n')
   const messageList = lines.map((line, index) => (
@@ -17,7 +18,7 @@ export function Message ({ ia, message }) {
         </figure>
         <div className=' flex-1'>
           <p className={`${ia ? ' bg-purple-700' : ' bg-green-700'} rounded-md p-4`}>
-            {messageList}
+            {loading ? <Loading /> : messageList}
           </p>
         </div>
       </article>

@@ -21,7 +21,8 @@ export const useMessageStore = create((set, get) => ({
         {
           id: state.messages.length + 1,
           ia: true,
-          message: ''
+          message: '',
+          loading: true
         }
       ]
     }))
@@ -45,7 +46,8 @@ export const useMessageStore = create((set, get) => ({
           if (entry.id === messageIAid) {
             return {
               ...entry,
-              message: json.response
+              message: json.response,
+              loading: false
             }
           }
           return entry
