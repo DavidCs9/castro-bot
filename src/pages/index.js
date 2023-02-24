@@ -1,5 +1,5 @@
 import { SendIcon } from '@/components/Icons'
-import { TypingEffect } from '@/components/TypingEffect'
+// import { TypingEffect } from '@/components/TypingEffect'
 import Head from 'next/head'
 import { useMessageStore } from '@/store/messages'
 import { useRef } from 'react'
