@@ -15,9 +15,6 @@ function Layout ({ children }) {
       <div id='chat' className='w-full relative bg-black h-screen text-slate-50 overflow-y-auto'>
         {/* <Aside /> */}
         {children}
-        {/* <div className=' text-center'>
-          <span className='bg-black  text-opacity-50 text-white'>Made By David Castro</span>
-        </div> */}
       </div>
     </>
   )
@@ -41,7 +38,12 @@ function IaAvatar () {
 
 function Message ({ ia, message }) {
   const avatar = ia ? <IaAvatar /> : <UserAvatar />
-  const textElement = ia ? <TypingEffect text={message} /> : message
+  const lines = message.split('\n')
+  const messageList = lines.map((line, index) => (
+  //  <p key={index}>{ia ? <TypingEffect text={line} /> : message}</p>
+    <p key={index}>{line}</p>
+  ))
+
   return (
     <div>
       <article className='flex gap-4 p-6 m-auto max-w-3xl text-gray-100 '>
@@ -49,7 +51,9 @@ function Message ({ ia, message }) {
           {avatar}
         </figure>
         <div className=' flex-1'>
-          <p className={`${ia ? ' bg-purple-700' : ' bg-green-700'} rounded-md p-4`}>{textElement}</p>
+          <p className={`${ia ? ' bg-purple-700' : ' bg-green-700'} rounded-md p-4`}>
+            {messageList}
+          </p>
         </div>
       </article>
     </div>
@@ -85,8 +89,6 @@ function ChatForm () {
 
     prompts += textAreaRef.current.value
     event.preventDefault()
-    console.log(prompts)
-    console.log(textAreaRef.current.value)
     sendPrompt({ prompt: prompts, userPrompt: textAreaRef.current.value })
     textAreaRef.current.value = ''
   }
