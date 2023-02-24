@@ -19,12 +19,6 @@ export function ChatForm () {
     textAreaRef.current.value = ''
   }
 
-  const handleChange = () => {
-    const el = textAreaRef.current
-    const scrollHeight = el.scrollHeight
-    el.style.height = scrollHeight + 'px'
-  }
-
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
@@ -45,7 +39,6 @@ export function ChatForm () {
           border-gray-900/50 text-white bg-gptlightgray rounded-md '
           >
             <textarea
-              onChange={handleChange}
               ref={textAreaRef}
               rows={1}
               tabIndex={0}
