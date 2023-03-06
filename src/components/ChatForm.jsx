@@ -1,6 +1,7 @@
 import { useMessageStore } from '@/store/messages'
 import { useRef } from 'react'
 import { SendIcon } from './Icons'
+import { motion } from 'framer-motion'
 
 export function ChatForm () {
   const sendPrompt = useMessageStore(state => state.sendPrompt)
@@ -27,7 +28,9 @@ export function ChatForm () {
   }
 
   return (
-    <div className='w-full fixed top-0 bg-black'>
+    <motion.div
+      className='w-full fixed top-0 bg-black'
+    >
       <section className=' m-4 justify-center bg-neutral-900 border-neutral-600 border-2 rounded-lg p-3 pb-7'>
         <h1 className=' text-center text-3xl pb-3'>CastroBot</h1>
         <form
@@ -53,6 +56,6 @@ export function ChatForm () {
           </div>
         </form>
       </section>
-    </div>
+    </motion.div>
   )
 }
