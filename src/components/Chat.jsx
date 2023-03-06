@@ -18,8 +18,8 @@ export function Chat () {
       <ChatForm />
       <main id='chat' className=' mt-[180px]'>
         <AnimatePresence>
-          {messages.map((entry) => (
-            <Message key={entry.id} {...entry} />
+          {messages.map((entry, index) => (
+            <Message key={entry.id} {...entry} index={index} />
           ))}
         </AnimatePresence>
         <DeleteButton />

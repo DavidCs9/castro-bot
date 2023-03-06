@@ -4,7 +4,7 @@ import { TypingEffect } from './TypingEffect'
 import { Loading } from './Loading'
 import { motion } from 'framer-motion'
 
-export function Message ({ ia, message, loading }) {
+export function Message ({ ia, message, loading, index }) {
   const avatar = ia ? <IaAvatar /> : <UserAvatar />
   const lines = message.split('\n')
   const messageList = lines.map((line, index) => (
@@ -19,31 +19,34 @@ export function Message ({ ia, message, loading }) {
         when: 'afterChildren'
       }
     },
-    visible: {
+    visible: ({ delay }) => ({
       opacity: 1,
       scale: 1,
       x: 0,
       transition: {
-        duration: 0.5
+        duration: 0.5,
+        delay
       }
-    },
-    exit: {
+    }),
+    exit: ({ delay }) => ({
       opacity: 0,
       scale: 0.5,
-      x: 1000,
       transition: {
-        duration: 0.5
+        duration: 0.1,
+        delay
       }
-    }
+    })
   }
 
   return (
 
     <motion.div
+      custom={{ delay: (index + 1) * 0.2 }}
       initial='hidden'
       animate='visible'
       exit='exit'
       variants={list}
+      layoutId={message.id}
     >
       <article className='flex gap-4 p-6 m-auto max-w-3xl text-gray-100 '>
         <figure className={`${ia ? ' bg-purple-700' : ' bg-black'} w-8 h-8 flex items-center justify-center rounded-md`}>

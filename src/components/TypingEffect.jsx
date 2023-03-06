@@ -7,7 +7,7 @@ export function TypingEffect ({ text }) {
   useEffect(() => {
     if (!text?.length) return
 
-    const randomTime = Math.floor(Math.random() * 20) + 30
+    const randomTime = Math.floor(Math.random() * 20) + 10
 
     const intervalId = setInterval(() => {
       if (currentIndex >= text.length) {

@@ -38,7 +38,9 @@ export function ChatForm () {
           onKeyDown={handleKeyDown}
           className=' w-full m-auto'
         >
-          <div className='relative flex flex-col py-3 px-4 border flex-grow
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className='relative flex flex-col py-3 px-4 border flex-grow
           border-gray-900/50 text-white bg-gptlightgray rounded-md '
           >
             <textarea
@@ -50,10 +52,14 @@ export function ChatForm () {
               placeholder='Ask me something'
               className='h-[24px] resize-none bg-transparent border-0 outline-none'
             />
-            <button className='absolute p-1 rounded-md bottom-2.5 right-2.5'>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className='absolute p-1 rounded-md bottom-2.5 right-2.5'
+            >
               <SendIcon />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </form>
       </section>
     </motion.div>
