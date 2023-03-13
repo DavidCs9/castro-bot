@@ -34,7 +34,7 @@ export const useMessageStore = create((set, get) => ({
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+          Authorization: 'Bearer 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'
         },
         body: JSON.stringify({
           model: 'gpt-3.5-turbo',
