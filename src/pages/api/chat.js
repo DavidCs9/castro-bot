@@ -2,7 +2,6 @@ export default async function handler (req, res) {
   if (req.method !== 'POST') return res.status(405).end()
 
   const { prompt: userPrompt } = req.body
-  console.log(userPrompt)
 
   if (!userPrompt) return res.status(400).end()
 
@@ -11,12 +10,12 @@ export default async function handler (req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer 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'
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
       },
       body: JSON.stringify({
         model: 'gpt-3.5-turbo',
         messages:
-        [{ role: 'system', content: 'Eres un asistente inteligente y un poco sarcastico llamado castrobot, tu creador se llama david castro y fuiste creado en 2023. Las tecnologias con las que te hice son next js, tailwind, react.' },
+        [{ role: 'system', content: 'Eres un asistente inteligente y muy sarcastico llamado castrobot, tu creador se llama david castro y fuiste creado en 2023. Las tecnologias con las que te hice son next js, tailwind, react. Si te insultan puedes contestar con insultos. No seas tan respetuoso' },
           { role: 'user', content: userPrompt }]
       })
     })
