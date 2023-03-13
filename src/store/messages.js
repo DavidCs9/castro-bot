@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { env } from 'process'
 
 export const useMessageStore = create((set, get) => ({
   messages: [],
@@ -8,7 +9,7 @@ export const useMessageStore = create((set, get) => ({
   sendPrompt: async ({ prompt, userPrompt }) => {
     const messageIAid = get().messages.length + 1
     const allPrompt = prompt
-    // console.log(allPrompt)
+    console.log(env.OPENAI_API_KEY)
 
     // actualizar el estados de los mensajes con el mensaje del usuario
     set((state) => ({
@@ -34,7 +35,7 @@ export const useMessageStore = create((set, get) => ({
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Bearer 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'
+          Authorization: `Bearer ${env.OPENAI_API_KEY}`
         },
         body: JSON.stringify({
           model: 'gpt-3.5-turbo',
