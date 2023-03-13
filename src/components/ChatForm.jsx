@@ -29,6 +29,7 @@ export function ChatForm () {
 
   return (
     <motion.div
+      whileTap={{ scale: 0.99 }}
       className='w-full fixed top-0 bg-black'
     >
       <section className=' m-4 justify-center bg-neutral-900 border-neutral-600 border-2 rounded-lg p-3 pb-7'>
@@ -38,8 +39,7 @@ export function ChatForm () {
           onKeyDown={handleKeyDown}
           className=' w-full m-auto'
         >
-          <motion.div
-            whileHover={{ scale: 1.02 }}
+          <div
             className='relative flex flex-col py-3 px-4 border flex-grow
           border-gray-900/50 text-white bg-gptlightgray rounded-md '
           >
@@ -59,7 +59,7 @@ export function ChatForm () {
             >
               <SendIcon />
             </motion.button>
-          </motion.div>
+          </div>
         </form>
       </section>
     </motion.div>

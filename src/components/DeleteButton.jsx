@@ -6,7 +6,6 @@ export function DeleteButton () {
   const handleDeleteChat = (event) => {
     deleteMessages()
     event.preventDefault()
-    console.log('delete button click')
   }
   return (
     <div className='w-full flex justify-center mb-6'>
