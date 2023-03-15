@@ -3,7 +3,8 @@ import { create } from 'zustand'
 export const useMessageStore = create((set, get) => ({
   messages: [],
   error: null,
-  deleteMessages: () => set({ messages: [] }),
+  deletebtn: false,
+  deleteMessages: () => set({ messages: [], deletebtn: false }),
 
   sendPrompt: async ({ prompt, userPrompt }) => {
     const messageIAid = get().messages.length + 1
@@ -24,7 +25,8 @@ export const useMessageStore = create((set, get) => ({
           message: '',
           loading: true
         }
-      ]
+      ],
+      deletebtn: true
     }))
 
     // fetching de datos
