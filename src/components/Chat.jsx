@@ -14,10 +14,10 @@ export function Chat () {
       transition={{
         duration: 0.5
       }}
-      className='flex flex-col h-full flex-1'
+      className='flex flex-col flex-1'
     >
       <ChatForm />
-      <main id='chat' className=' mt-[180px]'>
+      <main id='chat' className=''>
         <AnimatePresence>
           {messages.map((entry, index) => (
             <Message key={entry.id} {...entry} index={index} />

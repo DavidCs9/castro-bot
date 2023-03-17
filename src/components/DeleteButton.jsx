@@ -8,7 +8,7 @@ export function DeleteButton () {
     event.preventDefault()
   }
   return (
-    <div className='w-full flex justify-center mb-6'>
+    <div className='w-full flex justify-center mt-6'>
 
       <motion.button
         whileHover={{ scale: 1.1 }}

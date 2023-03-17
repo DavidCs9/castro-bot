@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gptlogo: '#10a37f',
-        gptdarkgrey: '#202123',
+        primary: '#EB455F',
+        secundary: '#2B3467',
         gptgray: '#343541',
         gptlightgray: '#444654'
       }

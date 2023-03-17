@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Chat } from '@/components/Chat'
+import { Bot } from '@/components/Bot'
 
 function Layout ({ children }) {
   return (
@@ -22,6 +23,7 @@ export default function Home () {
   return (
     <>
       <Layout>
+        <Bot />
         <Chat />
       </Layout>
       <script src='https://kit.fontawesome.com/a654d59b05.js' crossorigin='anonymous' async />

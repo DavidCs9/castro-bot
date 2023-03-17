@@ -30,18 +30,17 @@ export function ChatForm () {
   return (
     <motion.div
       whileTap={{ scale: 0.99 }}
-      className='w-full fixed top-0 bg-black'
+      className='w-full'
     >
-      <section className=' m-4 justify-center bg-neutral-900 border-neutral-600 border-2 rounded-lg p-3 pb-7'>
-        <h1 className=' text-center text-3xl pb-3'>CastroBot</h1>
+      <section className=' m-auto w-11/12 pt-4 lg:w-4/6'>
         <form
           onSubmit={handleSubmit}
           onKeyDown={handleKeyDown}
           className=' w-full m-auto'
         >
           <div
-            className='relative flex flex-col py-3 px-4 border flex-grow
-          border-gray-900/50 text-white bg-gptlightgray rounded-md '
+            className='relative flex flex-col py-4 px-4 flex-grow
+           text-white bg-gptlightgray rounded-md '
           >
             <textarea
               ref={textAreaRef}
@@ -49,7 +48,7 @@ export function ChatForm () {
               tabIndex={0}
               autoFocus
               defaultValue=''
-              placeholder='Ask me something'
+              placeholder='En que te puedo ayudar David'
               className='h-[24px] resize-none bg-transparent border-0 outline-none'
             />
             <motion.button

@@ -48,12 +48,12 @@ export function Message ({ ia, message, loading, index }) {
       variants={list}
       layoutId={message.id}
     >
-      <article className='flex gap-4 p-6 m-auto max-w-3xl text-gray-100 '>
-        <figure className={`${ia ? ' bg-purple-700' : ' bg-black'} w-8 h-8 flex items-center justify-center rounded-md`}>
+      <article className='flex gap-4 p-6 pb-1 m-auto max-w-3xl text-gray-100 '>
+        <figure className={`${ia ? ' bg-primary' : ' bg-black'} w-8 h-8 flex items-center justify-center rounded-md`}>
           {avatar}
         </figure>
         <div className=' flex-1'>
-          <p className={`${ia ? ' bg-purple-700' : ' bg-green-700'} rounded-md p-4`}>
+          <p className={`${ia ? ' bg-primary' : ' bg-secundary'} rounded-md p-4`}>
             {loading ? <Loading /> : messageList}
           </p>
         </div>
