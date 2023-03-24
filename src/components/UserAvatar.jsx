@@ -3,7 +3,7 @@ export function UserAvatar () {
     <img
       className=' rounded-md bg-black'
       alt='foto de david'
-      src='https://www.davidcastro.tech/static/images/david.jpg'
+      src='/chatbot_profile_pic.jpg'
     />
   )
 }
